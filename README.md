@@ -1,6 +1,6 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10950611&assignment_repo_type=AssignmentRepo)
 
-# \Schedule Optimizer\
+# Schedule Optimizer
  
  > Authors: \<[SeungPyo Lee](https://github.com/qwemelon3619)\>,\<[Joshua Jeong](https://github.com/JoshuaJJeong)\>,\<[member3](https://github.com/hzhen066)\>,\<[member4](https://github.com/tide001)\>
 
@@ -32,7 +32,7 @@ Some features that will be included into our program in addition to the main fun
   * The ability to set blackout times (times the user does not want any events scheduled).
   * The ability to set a priority level on events/tasks (low, medium, high).
   * The ability to set an event/task as multi-session for tasks that do not have to completed in one sitting.
-  
+
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
