@@ -1,41 +1,38 @@
 [![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-718a45dd9cf7e7f842a935f5ebbe5719a5e09af4491e668f4dbf3b35d5cca122.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10950611&assignment_repo_type=AssignmentRepo)
- > As you complete each section you **must** remove the prompt text. Every *turnin* of this project includes points for formatting of this README so keep it clean and keep it up to date. 
- > Prompt text is any lines beginning with "\>"
- > Replace anything between \<...\> with your project specifics and remove angle brackets. For example, you need to name your project and replace the header right below this line with that title (no angle brackets). 
-# \<Project title\>
- > Your author list below should include links to all members GitHub (remove existing author).
+
+# \Schedule Optimizer\
  
- > Authors: \<[SeungPyo Lee](https://github.com/qwemelon3619)\>,\<[member2](https://github.com/)\>,,\<[member3](https://github.com/)\>,,\<[member4](https://github.com/)\>
-
-
- > You will be forming a group of **FOUR** students and working on an interesting project. The project has 4 phases, each one with specific requirements. A list of proposed project ideas that have been successful in previous quarters is listed in the project specifications document on Canvas. You can select an idea from the list and start thinking about the features you will implement. If you want to propose your own original idea, you will have to contact your instructor to discuss the project and obtain written permission before you submit your project proposal (Phase 1). The project work should be divided almost equally among team members. You can of course help each other, but it needs to be clear who will be responsible for which features. Additionally, you are expected to follow Scrum patterns, specifically the use of a Scrum (Project) board, Sprints, and Scrum meetings.
-
- > ## Expectations
- > * The backend of your project should be implemented in C++. If you wish to choose anoher programming language (e.g. Java, Python), please discuss with your lab TA to obtain permission.
- > * You can incorporate additional technologies/tools but they must be approved (in writing) by the instructor or the TA.
- > * Each member of the group **must** be committing code regularly and make sure their code is correctly attributed to them. We will be checking attributions to determine if there was equal contribution to the project.
- > * **Each member of the group must actively participate in the Github Project board, writing unit tests, and reviewing commited code.**
-> * All project phases are to be submitted to this GitHub repository. You should modify this README file to reflect the different phases of the project. In addition, you should regularly hold sprint meetings with your group. You will need to hold two to three scrum/check-in meetings with your lab TA/reader at different times in addition to the final demo.
+ > Authors: \<[SeungPyo Lee](https://github.com/qwemelon3619)\>,\<[Joshua Jeong](https://github.com/JoshuaJJeong)\>,\<[member3](https://github.com/hzhen066)\>,\<[member4](https://github.com/tide001)\>
 
 ## Project Description
- > Your project description should summarize the project you are proposing. Be sure to include:
- > * Why is it important or interesting to you?
-   * -> For college students, who often have limited time to complete tasks such as homework, quizzes, and tests, it is important to encourage effective time management and task organization.(such a bad sentence.. plz edit)
-   * 
- > * What languages/tools/technologies do you plan to use? (This list may change over the course of the project)
-* -> C++, VSCode, github
- > * What will be the input/output of your project?
- * What are the features that the project provides?
-*  -> using CUI(commend user interface), user do input using user commends that only using for this program. the commends will shows on the github REAME.md and using help command.
-*  -> Output will shows the 2 week schedule of user. When user add tasks, the cumlated tasks will shows on the screen.
-*  -> User can add, delete and edit the tasks and rules base on the user commends. User can add duedate,Required time, priority to organize tasks efficently.
-*  -> If user finished adding tasks, program automatically organize the tasks and shows on the schedule page.
-*  -> For using digital calender app user, program provide .ics files for adding tasks on calender app such as google calender. (Just My(pyo) thoght, might be useful)
-*  -> 
- > 
- > This description should be in enough detail that the TA/instructor can determine the complexity of the project and if it is sufficient for the team members to complete in the time allotted. 
- > 
- > You also need to set up an empty project board using GitHub projects (board view). Make sure you add the board under your project repository. You should also have a Product Backlog and In testing columns added.
+Our project will be to create a schedule optimizer that allows users to plan and schedule events and tasks while also having the option to optimize a schedule automatically to most efficiently complete tasks.
+
+The user will be able to input events and tasks, a list of dates and times that they are able to complete them, the duration of the event or task, and whether or not the task may be broken down into multiple sessions, and priority level. Then the optimizer will be able to take all the information inputted by the user in order to return a schedule for the user that completes the tasks as quickly as possible while simultaneously avoiding potentially blocked out times of day for necessary events such as meals.
+
+A schedule optimizer can be a very helpful tool in order to plan, keep track, and save time completing tasks throughout the weeks. This can save immense amounts of time for any student, worker, or everyday user that has a number of different task/events and options for when to complete them. Instead of spending time working out a schedule for the day/week/month, the user can input all the information into the optimizer and get a schedule that meets all of their requirements so that they can spend their time more efficiently.
+
+In order to implement this program, we will be taking advantage of these languages/tools/technologies:
+  * C++
+  * VSCode
+  * Github
+
+The input of our program will consist of:
+  * Event name
+  * Duration of event
+  * Available Days/Dates
+  * Available start times for the event (at least 1, up to 3)
+
+The output of our program will give the user a schedule of all the events they inputted such that their are no overlapping tasks and that all the tasks will be completed as early as possible.
+
+Some features that will be included into our program in addition to the main function are:
+  * The ability to add or remove events/tasks and recalibrate the schedule.
+  * The ability to edit existing events/tasks and recalibrate the schedule.
+  * The ability to set recurring events/tasks that take place at the same time each day/week.
+  * The ability to manually resolve any time conflicts that are unresolvable by the algorithm.
+  * The ability to set blackout times (times the user does not want any events scheduled).
+  * The ability to set a priority level on events/tasks (low, medium, high).
+  * The ability to set an event/task as multi-session for tasks that do not have to completed in one sitting.
+  
  > ## Phase II
  > In addition to completing the "User Interface Specification" and "Class Diagram" sections below, you will need to:
  > * Create an "Epic" (note) for each feature. Place these epics in the `Product Backlog` column
