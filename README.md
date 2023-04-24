@@ -2,7 +2,7 @@
 
 # Schedule Optimizer
  
- > Authors: \<[SeungPyo Lee](https://github.com/qwemelon3619)\>,\<[Joshua Jeong](https://github.com/JoshuaJJeong)\>,\<[member3](https://github.com/hzhen066)\>,\<[member4](https://github.com/tide001)\>
+ > Authors: \<[SeungPyo Lee](https://github.com/qwemelon3619)\>,\<[Joshua Jeong](https://github.com/JoshuaJJeong)\>,\<[member3](https://github.com/hzhen066)\>,\<[Tony Ide](https://github.com/Tony-Ide)\>
 
 ## Project Description
 Our project will be to create a schedule optimizer that allows users to plan and schedule events and tasks while also having the option to optimize a schedule automatically to most efficiently complete tasks.
