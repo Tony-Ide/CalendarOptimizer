@@ -9,9 +9,19 @@ vector<string> split(string str, char Delimiter) {
     }
     return result;
 }
+void userinterface::getLineFromUser(){
+    string userinput;
+    getline(std::cin,userinput);
+    this->userInput = split(userinput,' ');
+}
+userinterface::userinterface(){
 
+}
 userinterface::userinterface(string input){
     this->userInput = split(input,' ');
+}
+vector<string> userinterface::getUserInput(){
+    return userInput;
 }
 
 userinterface::command userinterface::judgeInput(){
