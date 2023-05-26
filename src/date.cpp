@@ -17,5 +17,4 @@ string Date::getMonth(){
     
 int Date::getDay(){
     return day;
-
 }

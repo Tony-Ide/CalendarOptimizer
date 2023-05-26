@@ -3,6 +3,7 @@
 #include <string>
 #include "date.hpp"
 
+
 class BlackOutTime{
     private:
         Date date;
@@ -15,6 +16,5 @@ class BlackOutTime{
 
 
 };
-
 
 #endif // BLACKOUT_TIME_HPP

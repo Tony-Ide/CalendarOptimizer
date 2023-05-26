@@ -8,12 +8,12 @@
 
 class Scheduler{
     private:
-        list<Todo*> taskList;
-        list<BlackOutTime*> BlackoutTimeList;
+        list<Todo*> TaskList;
+        list<BlackoutTime*> BlackoutTimeList;
     public:
         void addTask(Todo *task);
         void removeTask(Todo *task);
-        void editTask(string taskName, Todo *task);
+        void editTask(string taskname, Todo *editedtask);
         void optimize();
 };
 

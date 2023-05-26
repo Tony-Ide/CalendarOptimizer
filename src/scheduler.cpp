@@ -10,7 +10,7 @@ void Scheduler::addTask(Todo *task)
 {
     list<Todo*>::iterator it;
     bool conflict_detected = false;
-    for(it = this->taskList.begin(); it != this->taskList.end(); ++it)
+    for(it = TaskList.begin(); it != TaskList.end(); ++it)
     {
         if((*it)->getDate()->getMonth() == task->getDate()->getMonth() && (*it)->getDate()->getDay() == task->getDate()->getDay())
         {
@@ -22,7 +22,7 @@ void Scheduler::addTask(Todo *task)
                     cout << "Conflict detected: Replacing " << (*it)->getName() << " task with " << task->getName() << "task." << endl;
                     cout << "Please reschedule " << (*it)->getName() << "task." << endl;
                     removeTask(*it);
-                    this->taskList.push_back(task);
+                    TaskList.push_back(task);
                 }
                 else
                 {
@@ -34,39 +34,35 @@ void Scheduler::addTask(Todo *task)
     }
     if(conflict_detected == false)
     {
-        this->taskList.push_back(task);
+        TaskList.push_back(task);
     }
 }
 
 void Scheduler::removeTask(Todo *task)
 {
-    int i = 0;
     list<Todo*>::iterator it;
-    for(it = this->taskList.begin(); it != this->taskList.end(); ++it)
+    for(it = TaskList.begin(); it != TaskList.end(); ++it)
     {
         if((*it)->getName() == task->getName())
         {
             break;
         }
-        i++;
     }
-    this->taskList.erase(it);
+    TaskList.erase(it);
 }
 
-void Scheduler::editTask(string taskName, Todo *editedTask)
+void Scheduler::editTask(string taskname, Todo *editedTask)
 {
-    int i = 0;
     list<Todo*>::iterator it;
-    for(it = this->taskList.begin(); it != this->taskList.end(); ++it)
+    for(it = TaskList.begin(); it != TaskList.end(); ++it)
     {
-        if((*it) -> getName() == taskName)
+        if((*it)->getName() == taskname)
         {
             break;
         }
-        i++;
     }
-    this->taskList.erase(it);
-    this->taskList.push_back(editedTask);
+    TaskList.erase(it);
+    TaskList.push_back(editedTask);
 }
 
 void Scheduler::optimize()

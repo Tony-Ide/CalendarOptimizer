@@ -8,8 +8,7 @@ class Event: public Todo{
 
 
     public:
-    Event(int r, Date* d, string n, int p, int t, int dur);
-    int recall;
+    Event(Date* d, string n, int p, int t, int dur);
 
 
 };
