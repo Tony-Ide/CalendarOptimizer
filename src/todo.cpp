@@ -11,7 +11,7 @@ Todo::Todo(Date* d, string s, int p, int t, int dur)
     duration = dur;
 }
 
-Date Todo::getDate()
+Date* Todo::getDate()
 {
     return date;
 }
@@ -23,7 +23,7 @@ string Todo::getName()
 
 int Todo::getPriority()
 {
-    return p;
+    return priority;
 }
 
 int Todo::getTime()

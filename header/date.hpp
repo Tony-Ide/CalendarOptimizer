@@ -8,6 +8,9 @@ class Date{
 
     public:
     Date(string, int);
+    string getMonth();
+    int getDay();
+
     string month;
     int day;
 

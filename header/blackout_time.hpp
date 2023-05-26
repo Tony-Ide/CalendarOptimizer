@@ -8,6 +8,6 @@ class {
     public:
 
 
-}
+};
 
 #endif // BLACKOUT_TIME_HPP
