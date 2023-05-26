@@ -8,21 +8,21 @@ using namespace std;
 
 void Scheduler::addTask(Todo *task)
 {
-    list<Task*>::iterator it;
+    list<Todo*>::iterator it;
     bool conflict_detected = false;
-    for(it = taskList.begin(); it != taskList.end(); ++it)
+    for(it = this->taskList.begin(); it != this->taskList.end(); ++it)
     {
-        if(it->getDate()->getMonth() == task->getDate()->getMonth() && it->getDate()->getDay() == task->getDate()->getDay())
+        if((*it)->getDate()->getMonth() == task->getDate()->getMonth() && (*it)->getDate()->getDay() == task->getDate()->getDay())
         {
-            if(task->getTime() >= it->getTime() && task->getTime < (it->getTime() + it->getDuration()))
+            if(task->getTime() >= (*it)->getTime() && task->getTime() < ((*it)->getTime() + (*it)->getDuration()))
             {
                 conflict_detected = true;
-                if(it->getPriority() > task->getPriority())
+                if((*it)->getPriority() > task->getPriority())
                 {
-                    cout << "Conflict detected: Replacing " << it->getName() << " task with " << task->getName() << "task." << endl;
-                    cout << "Please reschedule " << it->getName() << "task." << endl;
-                    removeTask(it);
-                    TaskList.push_back(task);
+                    cout << "Conflict detected: Replacing " << (*it)->getName() << " task with " << task->getName() << "task." << endl;
+                    cout << "Please reschedule " << (*it)->getName() << "task." << endl;
+                    removeTask(*it);
+                    this->taskList.push_back(task);
                 }
                 else
                 {
@@ -34,7 +34,7 @@ void Scheduler::addTask(Todo *task)
     }
     if(conflict_detected == false)
     {
-        TaskList.push_back(task);
+        this->taskList.push_back(task);
     }
 }
 
@@ -42,31 +42,31 @@ void Scheduler::removeTask(Todo *task)
 {
     int i = 0;
     list<Todo*>::iterator it;
-    for(it = taskList.begin(); it != taskList.end(); ++it)
+    for(it = this->taskList.begin(); it != this->taskList.end(); ++it)
     {
-        if(it->getName() == task->getName())
+        if((*it)->getName() == task->getName())
         {
             break;
         }
         i++;
     }
-    taskList.erase(i);
+    this->taskList.erase(it);
 }
 
-void Scheduler::editTask(Todo *task, Todo *editedTask)
+void Scheduler::editTask(string taskName, Todo *editedTask)
 {
     int i = 0;
-    list<Task*>::iterator it;
-    for(it = taskList.begin(); it != taskList.end(); ++it)
+    list<Todo*>::iterator it;
+    for(it = this->taskList.begin(); it != this->taskList.end(); ++it)
     {
-        if(it->getName() == task->getName())
+        if((*it) -> getName() == taskName)
         {
             break;
         }
         i++;
     }
-    taskList.erase(it);
-    taskList.push_back(editedTask);
+    this->taskList.erase(it);
+    this->taskList.push_back(editedTask);
 }
 
 void Scheduler::optimize()
