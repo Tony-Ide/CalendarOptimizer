@@ -8,15 +8,13 @@ class Date{
     private:
 
     public:
+    Date();
     Date(string, int);
     string month;
     int day;
 
     string getMonth();
     int getDay();
-
-    string month;
-    int day;
 
 };
 

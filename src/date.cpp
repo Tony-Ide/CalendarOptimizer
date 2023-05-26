@@ -1,11 +1,10 @@
 #include "../header/date.hpp"
-
-
-Date::Date(string m, int d){
-    month = m;
-    day = d;
-
 using namespace std;
+
+Date::Date(){
+    month="";
+    day=0;
+}
 Date::Date(string m, int d){
     month=m;
     day=d;
