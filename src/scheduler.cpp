@@ -41,7 +41,7 @@ void Scheduler::addTask(Todo *task)
 void Scheduler::removeTask(Todo *task)
 {
     int i = 0;
-    list<Task*>::iterator it;
+    list<Todo*>::iterator it;
     for(it = taskList.begin(); it != taskList.end(); ++it)
     {
         if(it->getName() == task->getName())
@@ -65,7 +65,7 @@ void Scheduler::editTask(Todo *task, Todo *editedTask)
         }
         i++;
     }
-    taskList.erase(i);
+    taskList.erase(it);
     taskList.push_back(editedTask);
 }
 

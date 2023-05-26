@@ -1,9 +1,8 @@
 #include "../header/todo.hpp"
-#include <iostream>
 
 using namespace std;
 
-Todo::Todo(Date d, string s, int p, int t, int dur)
+Todo::Todo(Date* d, string s, int p, int t, int dur)
 {
     date = d;
     name = s;

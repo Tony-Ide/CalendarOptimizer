@@ -3,10 +3,11 @@
 #include "date.hpp"
 #include <string.h>
 
+using namespace std;
 
-class {
+class Todo{
     private:
-        Date date;
+        Date* date;
         string name;
         int priority;
         int time;
