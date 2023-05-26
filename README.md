@@ -39,7 +39,7 @@ Some features that will be included into our program in addition to the main fun
 > The Navigation Diagram and the Screen Layouts can be found [here](https://docs.google.com/document/d/1cz8a8vcMeWhP3Ak7lRTANpxjZ2O_7oP-SqNYGQ6tbC4/edit?usp=sharing).
 
 ## Class Diagram
- > The UML Class Diagram can be found [here](https://drive.google.com/file/d/1r1yw7ulCBWrIhM2v2lEsLqIFsEnQPoC8/view?usp=sharing).
+ > The UML Class Diagram can be found [here](https://docs.google.com/document/d/1LUfIhlml08uEGgsR8kQS1oFNR3Uno8UR6IYEfOQ_8rE/edit).
  
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.

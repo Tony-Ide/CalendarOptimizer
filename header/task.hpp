@@ -8,6 +8,6 @@ class {
     public:
 
 
-}
+};
 
 #endif // TASK_HPP
