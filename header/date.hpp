@@ -4,12 +4,13 @@ using namespace std;
 #include <string>
 class Date{
     private:
-
+    string month;
+    int day;
 
     public:
     Date(string, int);
-    string month;
-    int day;
+    string getMonth();
+    int getDay();
 
 
 };

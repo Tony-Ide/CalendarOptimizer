@@ -8,14 +8,13 @@ class MainMenu{
 
 
     public:
-    MainMenu(Scheduler*);
+    MainMenu(Scheduler* schedule);
     void printCalendar(); 
 
     void printHelp();
 
     void printTaskTable();
     void  editTaskMenu();
-
 
 };
 

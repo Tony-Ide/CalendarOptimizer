@@ -22,6 +22,7 @@ using namespace std;
     void MainMenu::printTaskTable() {
         // Implementation goes here
     }
+    
     void  MainMenu::editTaskMenu(){
         string todoName;
         cout<<"Enter the task you want to edit: ";
@@ -78,8 +79,8 @@ using namespace std;
             cout<< "Enter how many weeks do you want to repeat this event for: ";
             cin>>recall;
             Date* newDate = new Date(month,day);
-            Event* newEvent = new Event(recall,newDate, newTodoName, priority, time, durationTime);
-            scheduler->editTask(todoName,newEvent);
+            //Event* newEvent = new Event(newDate, newTodoName, priority, time, durationTime);
+            //scheduler->editTask(todoName,newEvent);
 
         }
 
