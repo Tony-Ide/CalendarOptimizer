@@ -3,13 +3,18 @@
 #include <string>
 #include "date.hpp"
 
-class {
+class BlackOutTime{
     private:
         Date date;
         std::string name;
         int time;
     public:
+
         BlackOutTime(Date d, std::string n, int t);
-}
+
+
+
+};
+
 
 #endif // BLACKOUT_TIME_HPP
