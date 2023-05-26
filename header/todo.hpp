@@ -13,8 +13,8 @@ class Todo{
         int time;
         int duration;
     public:
-        Todo(Date d, string s, int p, int t, int dur);
-        Date getDate();
+        Todo(Date* d, string s, int p, int t, int dur);
+        Date* getDate();
         string getName();
         int getPriority();
         int getTime();
