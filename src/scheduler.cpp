@@ -69,3 +69,7 @@ void Scheduler::optimize()
 {
     
 }
+
+list<Todo*> Scheduler::getTaskList(){
+    return this->TaskList;
+}
