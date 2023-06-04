@@ -42,45 +42,52 @@ using namespace std;
         int lastLineNum=0;
         int printline=0;
         int todoExists=false;
-        for(int hour=5*2;hour<25*2;hour++){
+        printf("%13s\n",date.c_str());
+        printf("|---------------------|\n");
+        for(int hour=6*2;hour<25*2;hour++){
             for(todoIterater = newTodoList.begin(); todoIterater!= newTodoList.end(); todoIterater++){
                 if((*todoIterater)->getDate()->getMonth() == month && (*todoIterater)->getDate()->getDay() == day
                 && (*todoIterater)->getTime() >= hour*50 && (*todoIterater)->getTime() < hour*50 + 30){
                     printline = (*todoIterater)->getDuration()*2+1;
                     lastLineNum= hour+printline;
                     for(int line = 0;line<printline-1;line++){
-                        if(NotconsecutiveTodo == true){
-                            if(line%2 == 0){printf("| %2i:00 |",hour/2+line/2);}
-                            else {printf("|       |");}
-                        }
-                        else{
-                            continue;
-                        }
-                        if(line == 0){
-                            printf("-------------|\n");
-                        }
-                        else if(line == printline/2){
-                            printf("%9s    |\n", (*todoIterater)->getName().c_str());
-                        }
-                        else{
-                            printf("             |\n");
+                        if(hour+line<50){
+                            if(NotconsecutiveTodo == true){
+                                if(line%2 == 0){printf("| %2i:00 |",hour/2+line/2);}
+                                else {printf("|       |");}
+                            }
+                            else{
+                                continue;
+                            }
+                            if(line == 0){
+                                printf("-------------|\n");
+                            }
+                            else if(line == printline/2){
+                                printf("%9s    |\n", (*todoIterater)->getName().c_str());
+                            }
+                            else{
+                                printf("             |\n");
+                            }
                         }
                     }
                     hour = lastLineNum-1;
                     todoExists = true;
                 } 
             }
-            if(todoExists == false){
-                if(hour%2 ==0){printf("| %2i:00 |             |",hour/2);}
-                else {printf("|       |             |");}
-                NotconsecutiveTodo = true;
+            if(lastLineNum<50){
+                if(todoExists == false){
+                    if(hour%2 ==0){printf("| %2i:00 |             |",hour/2);}
+                    else {printf("|       |             |");}
+                    NotconsecutiveTodo = true;
+                }
+                else{
+                    if(hour%2 ==0){printf("| %2i:00 |",hour/2);}
+                    else {printf("|        |");}
+                    printf("-------------|");
+                }
+                printf("\n");
             }
-            else{
-                if(hour%2 ==0){printf("| %2i:00 |",hour/2);}
-                else {printf("|        |");}
-                printf("-------------|");
-            }
-            printf("\n");
+
             todoExists = false;
         }
         printf("|---------------------|\n");
