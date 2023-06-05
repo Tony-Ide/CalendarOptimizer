@@ -15,8 +15,36 @@ using namespace std;
         // Implementation goes here
     }
 
-    void MainMenu::printHelp() {
-        // Implementation goes here
+    void MainMenu::printHelp() { 
+        //if the user input is "help", this function will be called
+    //this function opens the help screen
+        string command;
+        cout<<"Manage Tasks Help"<<"\n"<<"\n";
+        cout<<"Add           "<<"add schedule on"<<"\n";
+        cout<<"Delete        "<<"delete schedule for the"<<"\n";
+        cout<<"Edit          "<<"edit added schedule on"<<"\n";
+        cout<<"Organize      "<<"organize schedule automatically base on added schedule"<<"\n"<<"\n";
+        cout<<"Use --help to find out more about commands such as Add --help"<<"\n";
+        cout<<"Enter exit to exit help screen"<<"\n"<<"\n";
+
+        while(command != "exit"){
+            cout<<"Enter command >> ";
+            cin>>command;
+
+            if(command == "Add --help"){
+                //implement how to use Add
+            }
+            else if(command == "Delete --help"){
+                //implement how to use Delete
+            }
+            else if(command == "Edit --help"){
+                //implement how to use Edit
+            }
+            else if(command == "Organize --help"){
+                //implement how to use Organize
+            }
+        }
+        return 0;
     }
 
     void MainMenu::printTaskTable() {
