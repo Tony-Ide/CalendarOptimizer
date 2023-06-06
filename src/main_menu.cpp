@@ -1,9 +1,11 @@
 #include "../header/main_menu.hpp"
 #include "../header/scheduler.hpp"
 #include "../header/date.hpp"
-#include "../header/event.hpp"
+//#include "../header/event.hpp"
 #include "../header/todo.hpp"
 #include <iostream>
+#include <sstream>
+#include <vector>
 using namespace std;
 
 
@@ -14,6 +16,15 @@ using namespace std;
     void MainMenu::printCalendar() {
         // Implementation goes here
     }
+
+
+    void MainMenu::printWeek(string date){
+
+    }
+    void MainMenu::printDay(std::string date){
+
+    }
+
 
     void MainMenu::printHelp() {
         // Implementation goes here
@@ -32,7 +43,7 @@ using namespace std;
         cin>>todoType;
 
         if(todoType==1){
-            string month;
+            int month;
             int day;
             string newTodoName;
             int priority;
@@ -57,7 +68,7 @@ using namespace std;
         }
 
         else if(todoType==2){
-            string month;
+            int month;
             int day;
             string newTodoName;
             int priority;
