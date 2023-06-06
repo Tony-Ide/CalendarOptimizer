@@ -7,16 +7,7 @@
 #include <sstream>
 #include <vector>
 using namespace std;
-    vector<string> split(string input, char delimiter) {
-        vector<string> answer;
-        stringstream ss(input);
-        string temp;
-    
-        while (getline(ss, temp, delimiter)) {
-            answer.push_back(temp);
-        }
-        return answer;
-    }
+
 
     MainMenu::MainMenu(Scheduler* schedule){
         scheduler=schedule;
@@ -109,10 +100,6 @@ using namespace std;
     }
 
     void MainMenu::printDay(Date* targetDate){
-
-        /*vector<string> dateSplit = split(date,'/');
-        int month = stoi(dateSplit[0]);
-        int day = stoi(dateSplit[1]);*/
         int month = targetDate->getMonth();
         int day = targetDate->getMonth();
         list<Todo*> newTodoList = scheduler->getTaskList();
@@ -170,7 +157,6 @@ using namespace std;
             todoExists = false;
         }
         printf("|---------------------|\n");
-
     }
 
 
