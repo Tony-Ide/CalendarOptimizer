@@ -6,14 +6,14 @@ using namespace std;
 #include <string>
 class Date{
     private:
-    string month;
+    int month;
     int day;
 
     public:
     Date();
-    Date(string, int);
+    Date(int, int);
 
-    string getMonth();
+    int getMonth();
     int getDay();
 
 };
