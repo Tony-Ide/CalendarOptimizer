@@ -7,16 +7,7 @@
 #include <sstream>
 #include <vector>
 using namespace std;
-    vector<string> split(string input, char delimiter) {
-        vector<string> answer;
-        stringstream ss(input);
-        string temp;
-    
-        while (getline(ss, temp, delimiter)) {
-            answer.push_back(temp);
-        }
-        return answer;
-    }
+
 
     MainMenu::MainMenu(Scheduler* schedule){
         scheduler=schedule;
@@ -31,6 +22,7 @@ using namespace std;
 
     }
     void MainMenu::printDay(std::string date){
+
 
         vector<string> dateSplit = split(date,'/');
         int month = stoi(dateSplit[0]);
@@ -91,7 +83,6 @@ using namespace std;
             todoExists = false;
         }
         printf("|---------------------|\n");
-
     }
 
 
