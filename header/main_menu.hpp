@@ -9,7 +9,9 @@ class MainMenu{
 
     public:
     MainMenu(Scheduler* schedule);
-    void printCalendar(); 
+    void printTaskList(); 
+    void printWeek(Date* targetDate);
+    void printDay(Date* targetDate);
 
     void printHelp();
 

@@ -13,10 +13,18 @@ using namespace std;
         scheduler=schedule;
    
     }
-    void MainMenu::printCalendar() {
-        // Implementation goes here
-    }
+    void MainMenu::printTaskList() {
+        list<Todo*> newTodoList = scheduler->getTaskList();
+        list<Todo*>::iterator todoIterater; 
+        printf(" #        NAME      DUEDAY   STARTTIME  DURATiON  PRIORITY  \n");
 
+        int number=1;
+        for(todoIterater = newTodoList.begin(); todoIterater!= newTodoList.end(); todoIterater++){
+            printf("%2i. %13s  %2i/%2i      %4i       %2i         %i\n",number,(*todoIterater)->getName().c_str(),(*todoIterater)->getDate()->getMonth(),(*todoIterater)->getDate()->getDay(), (*todoIterater)->getTime(),(*todoIterater)->getDuration(), (*todoIterater)->getPriority());
+            number++;
+        }
+
+    }
 
     void MainMenu::printWeek(Date* targetDate){
         /*vector<string> dateSplit = split(date,'/');
