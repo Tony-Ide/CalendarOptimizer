@@ -11,7 +11,7 @@ class Scheduler{
     public:
         void addTask(Todo *task);
         void removeTask(Todo *task);
-        void editTask(string taskname, Todo *editedtask);
+        void editTask(Todo *originalTask, Todo *editedTask);
         void optimize();
         list<Todo*> getTaskList();
 };

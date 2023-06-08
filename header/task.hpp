@@ -8,7 +8,7 @@ class Task: public Todo{
 
     public:
     Task(Date* d, string s, int p, int t, int dur);
-
+    void splitTask(Task* newTask);
 };
 
 #endif // TASK_HPP

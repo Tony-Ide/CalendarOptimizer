@@ -2,9 +2,11 @@
 
 #include <string>
 
-BlackOutTime::BlackOutTime(Date d, std::string n, int t) {
+BlackOutTime::BlackOutTime(Date* d, int t, int dur) {
     date = d;
-    name = n;
-    time = t;
+    name = "Blackout";
+    time.push_back(t);
+    priority = 4;
+    duration = dur;
 }
 
