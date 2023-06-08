@@ -3,14 +3,12 @@
 #include "todo.hpp"
 #include "blackout_time.hpp"
 #include "date.hpp"
-// #include "task.hpp"
+#include "task.hpp"
 #include <list>
 
 class Scheduler{
     private:
         list<Todo*> TaskList;
-        list<BlackOutTime*> BlackoutTimeList;
-
     public:
         void addTask(Todo *task);
         void removeTask(Todo *task);
