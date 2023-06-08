@@ -18,7 +18,8 @@ class MainMenu{
     void printTaskTable();
     void  editTaskMenu();
     void  addTaskMenu();
-
+    void deleteTaskMenu();
+    void organizeTasksMenu();
 };
 
 #endif // MAIN_MENU_HPP

@@ -1,15 +1,7 @@
 #include "../header/todo.hpp"
+#include <vector>
 
 using namespace std;
-
-Todo::Todo(Date* d, string s, int p, int t, int dur)
-{
-    date = d;
-    name = s;
-    priority = p;
-    time = t;
-    duration = dur;
-}
 
 Date* Todo::getDate()
 {
@@ -28,10 +20,14 @@ int Todo::getPriority()
 
 int Todo::getTime()
 {
-    return time;
+    return time.front();
 }
 
 int Todo::getDuration()
 {
     return duration;
 }
+ void Todo::addTime(int t)
+ {
+    time.push_back(t);
+ }

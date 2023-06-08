@@ -123,7 +123,7 @@ void Scheduler::optimize()
         }
         if(conflict_detected == false)
         {
-            TaskList.push_back(notProcessed.top())
+            TaskList.push_back(notProcessed.top());
         }
         notProcessed.pop();
     }
