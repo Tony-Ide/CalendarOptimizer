@@ -17,6 +17,7 @@ class MainMenu{
 
     void printTaskTable();
     void  editTaskMenu();
+    void  addTaskMenu();
 
 };
 
