@@ -4,11 +4,11 @@
 
 class Event: public Todo{
     private:
-
+        
 
 
     public:
-    Event(Date* d, string n, int p, int t, int dur);
+    Event(Date* d, string s, int p, int t, int dur);
 
 
 };

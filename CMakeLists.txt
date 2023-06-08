@@ -6,5 +6,6 @@ ADD_EXECUTABLE(schedule_optimizer
     src/main_menu.cpp
     src/scheduler.cpp
     src/todo.cpp
-    src/blackout_time.cpp
+    src/event.cpp
+    src/task.cpp
 )

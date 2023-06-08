@@ -1,7 +1,8 @@
 #include "../header/main_menu.hpp"
 #include "../header/scheduler.hpp"
 #include "../header/date.hpp"
-//#include "../header/event.hpp"
+#include "../header/event.hpp"
+#include "../header/task.hpp"
 #include "../header/todo.hpp"
 #include <iostream>
 #include <sstream>
@@ -55,7 +56,7 @@ using namespace std;
                 //implement how to use Organize
             }
         }
-        return 0;
+    }
 
     void MainMenu::printWeek(Date* targetDate){
         /*vector<string> dateSplit = split(date,'/');
@@ -205,88 +206,93 @@ using namespace std;
     void  MainMenu::addTaskMenu(){
 
         int todoType;
-        cout<<"Select option:"<<"\n"<<"1: Normal Todo"<<"\n"<<"2: Recurring Todo"<<"\n"<<"3: Task Todo"<<"\n"<<endl;
+        cout<<"Select option:"<<"\n"<<"1: Task (can be completed in multiple sessions)"<<"\n"<<"2: Event (must be completed in one sitting)"<<"\n" <<endl;
         cin>>todoType;
 
         if(todoType==1){
-            string month;
+            int month;
             int day;
             string newTodoName;
             int priority;
             int time;
             int durationTime;
-            cout<< "Enter Month: ";
+            cout<< "Enter Date (e.g. 02 24 for February 24th): ";
             cin>>month;
-            cout<< "Enter Day: ";
             cin>>day;
-            cout<< "Enter New Todo Name: ";
+            cout<< "Enter Task Name: ";
             cin>>newTodoName;
-            cout<< "Enter priority number: ";
+            cout<< "Enter priority number (1 Least important - 3 Most Important): ";
             cin>>priority;
-            cout<< "Enter start time: ";
-            cin>>time;
             cout<< "Enter duration time in hours: ";
             cin>>durationTime;
+            cout<< "Enter start time (e.g. 1300 for 1:00pm): ";
+            cin>>time;
             Date* newDate = new Date(month,day);
-            Todo* newTodo = new Todo(newDate, newTodoName, priority, time, durationTime);
-            scheduler->addTask(newTodo);
-
+            Task* newTask = new Task(newDate, newTodoName, priority, time, durationTime);
+            char choice;
+            cout << "Would you like to add an alternative start time? (y or n): ";
+            cin >> choice;
+            if(choice == 'y')
+            {
+                cout<< "Enter alternate start time (e.g. 1300 for 1:00pm): ";
+                cin>>time;
+                newTask->addTime(time);
+                cout << "Would you like to add another alternative start time? (y or n): ";
+                cin >> choice;
+                if(choice == 'y')
+                {
+                    cout<< "Enter alternate start time (e.g. 1300 for 1:00pm): ";
+                    cin>>time;
+                    newTask->addTime(time);
+                }
+            }
+            scheduler->addTask(newTask);
         }
 
         else if(todoType==2){
-            string month;
+            int month;
             int day;
             string newTodoName;
             int priority;
             int time;
             int durationTime;
             int recall;
-            cout<< "Enter Month: ";
+            cout<< "Enter Date (e.g. 02 24 for February 24th): ";
             cin>>month;
-            cout<< "Enter Day: ";
             cin>>day;
-            cout<< "Enter New Todo Name: ";
+            cout<< "Enter Task Name: ";
             cin>>newTodoName;
-            cout<< "Enter priority number: ";
+            cout<< "Enter priority number (1 Least important - 3 Most Important): ";
             cin>>priority;
-            cout<< "Enter start time: ";
-            cin>>time;
             cout<< "Enter duration time in hours: ";
             cin>>durationTime;
-            cout<< "Enter how many weeks do you want to repeat this event for: ";
-            cin>>recall;
-            Date* newDate = new Date(month,day);
-            //Event* newEvent = new Event(newDate, newTodoName, priority, time, durationTime);
-            //scheduler->addTask(newEvent);
-
-        }
-
-
-        else if(todoType==3){
-            string month;
-            int day;
-            string newTodoName;
-            int priority;
-            int time;
-            int durationTime;
-            cout<< "Enter Month: ";
-            cin>>month;
-            cout<< "Enter Day: ";
-            cin>>day;
-            cout<< "Enter New Todo Name: ";
-            cin>>newTodoName;
-            cout<< "Enter priority number: ";
-            cin>>priority;
-            cout<< "Enter start time: ";
+            cout<< "Enter start time (e.g. 1300 for 1:00pm): ";
             cin>>time;
-            cout<< "Enter duration time in hours: ";
-            cin>>durationTime;
             Date* newDate = new Date(month,day);
-            Todo* newTodo = new Todo(newDate, newTodoName, priority, time, durationTime);
-            scheduler->addTask(newTodo);
-
+            Event* newEvent = new Event(newDate, newTodoName, priority, time, durationTime);
+            char choice;
+            cout << "Would you like to add an alternative start time? (y or n): ";
+            cin >> choice;
+            if(choice == 'y')
+            {
+                cout<< "Enter alternate start time (e.g. 1300 for 1:00pm): ";
+                cin>>time;
+                newEvent->addTime(time);
+                cout << "Would you like to add another alternative start time? (y or n): ";
+                cin >> choice;
+                if(choice == 'y')
+                {
+                    cout<< "Enter alternate start time (e.g. 1300 for 1:00pm): ";
+                    cin>>time;
+                    newEvent->addTime(time);
+                }
+            }
+            scheduler->addTask(newEvent);
         }
-
+        else
+        {
+            cout << "Invalid Type! Aborting..." << endl;
+        }
     }
 
 
@@ -295,7 +301,7 @@ using namespace std;
         cout<<"Enter the task you want to edit: ";
         cin>>todoName;
         int todoType;
-        cout<<"Select option:"<<"\n"<<"1: Normal Todo"<<"\n"<<"2: Recurring Todo"<<"\n"<<"3: Task Todo"<<"\n"<<endl;
+        cout<<"Select option:"<<"\n"<<"1: Task"<<"\n"<<"2: Event"<<"\n"<<endl;
         cin>>todoType;
 
         if(todoType==1){
@@ -318,7 +324,7 @@ using namespace std;
             cout<< "Enter duration time in hours: ";
             cin>>durationTime;
             Date* newDate = new Date(month,day);
-            Todo* newTodo = new Todo(newDate, newTodoName, priority, time, durationTime);
+            Task* newTodo = new Task(newDate, newTodoName, priority, time, durationTime);
             scheduler->editTask(todoName,newTodo);
 
         }
@@ -330,35 +336,6 @@ using namespace std;
             int priority;
             int time;
             int durationTime;
-            int recall;
-            cout<< "Enter Month: ";
-            cin>>month;
-            cout<< "Enter Day: ";
-            cin>>day;
-            cout<< "Enter New Todo Name: ";
-            cin>>newTodoName;
-            cout<< "Enter priority number: ";
-            cin>>priority;
-            cout<< "Enter start time: ";
-            cin>>time;
-            cout<< "Enter duration time in hours: ";
-            cin>>durationTime;
-            cout<< "Enter how many weeks do you want to repeat this event for: ";
-            cin>>recall;
-            Date* newDate = new Date(month,day);
-            //Event* newEvent = new Event(newDate, newTodoName, priority, time, durationTime);
-            //scheduler->editTask(todoName,newEvent);
-
-        }
-
-
-        else if(todoType==3){
-            string month;
-            int day;
-            string newTodoName;
-            int priority;
-            int time;
-            int durationTime;
             cout<< "Enter Month: ";
             cin>>month;
             cout<< "Enter Day: ";
@@ -372,10 +349,34 @@ using namespace std;
             cout<< "Enter duration time in hours: ";
             cin>>durationTime;
             Date* newDate = new Date(month,day);
-            Todo* newTodo = new Todo(newDate, newTodoName, priority, time, durationTime);
-            scheduler->editTask(todoName,newTodo);
-
+            Event* newEvent = new Event(newDate, newTodoName, priority, time, durationTime);
+            scheduler->editTask(todoName,newEvent);
         }
-        //write if statement for if user picks Task Todo
+        else
+        {
+            cout << "Invalid Type! Aborting..." << endl;
+        }
+    }
 
+    void MainMenu::deleteTaskMenu()
+    {
+        int choice;
+        printTaskList();
+        cout << "Which task would you like to delete? ";
+        cin >> choice;
+        list<Todo*>::iterator it;
+        for(int i = 0; i < choice; i++)
+        {
+            it = scheduler->getTaskList().begin();
+            ++it;
+        }
+        scheduler->removeTask(*it);
+        cout << endl;
+        cout << "Task removed successfully." << endl;
+    }
+
+    void MainMenu::organizeTasksMenu()
+    {
+        scheduler->optimize();
+        cout << "Schedule has been optimized." << endl;
     }

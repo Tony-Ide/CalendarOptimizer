@@ -1,10 +1,10 @@
 #include "../header/event.hpp"
 
-Event::Event(int r, Date* d, string n, int p, int t, int dur) 
+Event::Event(Date* d, string s, int p, int t, int dur)
 {
     date = d;
     name = s;
     priority = p;
-    time = t;
+    time.push_back(t);
     duration = dur;
 }
