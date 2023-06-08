@@ -68,24 +68,17 @@ void Scheduler::removeTask(Todo *task)
     TaskList.erase(it);
 }
 
-void Scheduler::editTask(string taskname, Todo *editedTask)
+void Scheduler::editTask(Todo *originalTask, Todo *editedTask)
 {
-    list<Todo*>::iterator it;
-    for(it = TaskList.begin(); it != TaskList.end(); ++it)
-    {
-        if((*it)->getName() == taskname)
-        {
-            break;
-        }
-    }
-    TaskList.erase(it);
+    TaskList.erase(originalTask);
+    delete originalTask;
     TaskList.push_back(editedTask);
 }
 
 void Scheduler::optimize()
 {
     stack<Todo*> notProcessed;
-    for(int i = 1; i <= 3; i++)
+    for(int i = 1; i <= 4; i++)
     {
         list<Todo*>::iterator it;
         for(it = TaskList.begin(); it != TaskList.end(); ++it)
