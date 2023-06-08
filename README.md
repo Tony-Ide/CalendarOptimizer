@@ -41,17 +41,23 @@ Some features that will be included into our program in addition to the main fun
 ![12323](https://github.com/cs100/final-project-hzhen066-tide001-slee809-jjeon050/assets/47466245/df577792-ba0b-40e5-8819-c9242d6f8f23)
 ## Class Diagram
  > The UML Class Diagram can be found [here](https://docs.google.com/document/d/1LUfIhlml08uEGgsR8kQS1oFNR3Uno8UR6IYEfOQ_8rE/edit).
+ 
  ![CS100_Project_UML-Page-1 drawio(1)](https://github.com/cs100/final-project-hzhen066-tide001-slee809-jjeon050/assets/47466245/d86307aa-a3b3-4450-804c-e6ce06ace88d)
+
 **Scheduler**
+
 The scheduler class consists of 3 private member variables: a list of todos, a list of organized todos, and a list of blackout times. It also comes with 4 member functions, add task which adds a new task to the list of todos, remove tasks which removes a specified task from the list, and edit task which replaces an existing task in the list with an edited version of the task. Finally the organize function will take the list of todos and organize them so that there are no time conflicts in order of priority.
 
 **Date**
+
 The Date class is indicating the date of the month and date. Class consists of 3 private member variables: integer of month and integer of date of the Todo. They have getters to return each value and constructor to set the value.
 
 **Todo**
+
 Todo class is indicating the one task in the scheduler. Todo show The Todo class comes with 5 private member variables: Date, name, priority, time and duration. Todo has a constructor of 5 values to set a value. Todo class stores the month and day of the Todo, a string name which stores the name of the task, priority which stores an integer of 1-3, time which stores an integer from 0 to 2349, and duration time which stores an integer that represents hours. Also, each variable has getters to return each value.
 
 **MainMenu**
+
 MainMenu class is a class for printing the screens to use a scheduler. MainMenu class has Scheduler to point to the schedule object. MainMenue has a constructor to set a scheduler variable. MainMenu class has a function to print TaskLists, schedule of week and schedule of one day. MainMenu class has a menu for add, edit and remove the todo to use the scheduler.
  
  ## Screenshots
