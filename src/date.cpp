@@ -2,15 +2,15 @@
 using namespace std;
 
 Date::Date(){
-    month="";
+    month=0;
     day=0;
 }
-Date::Date(string m, int d){
+Date::Date(int m, int d){
     month=m;
     day=d;
 }
 
-string Date::getMonth(){
+int Date::getMonth(){
     return month;
 }
     
