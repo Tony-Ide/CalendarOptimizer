@@ -40,9 +40,9 @@ Some features that will be included into our program in addition to the main fun
 
 ![12323](https://github.com/cs100/final-project-hzhen066-tide001-slee809-jjeon050/assets/47466245/df577792-ba0b-40e5-8819-c9242d6f8f23)
 ## Class Diagram
- > The UML Class Diagram can be found [here](https://docs.google.com/document/d/1LUfIhlml08uEGgsR8kQS1oFNR3Uno8UR6IYEfOQ_8rE/edit).
+ > The UML Class Diagram can be found [here](https://drive.google.com/file/d/1r1yw7ulCBWrIhM2v2lEsLqIFsEnQPoC8/view?usp=sharing).
  
- ![CS100_Project_UML-Page-1 drawio(1)](https://github.com/cs100/final-project-hzhen066-tide001-slee809-jjeon050/assets/47466245/d86307aa-a3b3-4450-804c-e6ce06ace88d)
+![CS100_Project_UML-Page-1 drawio(2)](https://github.com/cs100/final-project-hzhen066-tide001-slee809-jjeon050/assets/47466245/31caacd6-3a73-4605-bac0-e34533dd9693)
 
 **Scheduler**
 
@@ -59,6 +59,10 @@ Todo class is indicating the one task in the scheduler. Todo show The Todo class
 **MainMenu**
 
 MainMenu class is a class for printing the screens to use a scheduler. MainMenu class has Scheduler to point to the schedule object. MainMenue has a constructor to set a scheduler variable. MainMenu class has a function to print TaskLists, schedule of week and schedule of one day. MainMenu class has a menu for add, edit and remove the todo to use the scheduler.
+
+**Event**
+
+Event class is a class inherit Todo class to implement resulsive Todo. It uses for implmenting the todo that do every week.
  
  ## Screenshots
  > Screenshots of the input/output after running your application
