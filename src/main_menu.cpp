@@ -51,15 +51,19 @@ using namespace std;
 
             if(command == "Add --help"){
                 //implement how to use Add
+                cout<<"Select 1 to navigate into Manage Task Screen, from there, select 1 to begin adding tasks";
             }
             else if(command == "Delete --help"){
                 //implement how to use Delete
+                cout<<"Select 1 to navigate into Manage Task Screen, from there, select 2 to begin deleting tasks";
             }
             else if(command == "Edit --help"){
                 //implement how to use Edit
+                cout<<"Select 1 to navigate into Manage Task Screen, from there, select 3 to begin editing tasks";
             }
             else if(command == "Organize --help"){
                 //implement how to use Organize
+                cout<<"Select 1 to navigate into Manage Task Screen, from there, select 4 to begin organizing tasks";
             }
         }
     }
