@@ -12,8 +12,10 @@ Event::Event(Date* d, string s, int p, int t, int dur, int r)
     time.push_back(t);
     duration = dur;
     repeat = r;
+
 }
 Event::~Event()
 {
     delete date;
 }
+
