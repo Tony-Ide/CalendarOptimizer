@@ -45,6 +45,7 @@ TEST(DateTest, defaultDate){
     Date* newDate= new Date();
     EXPECT_EQ(newDate->getMonth(),0);
     EXPECT_EQ(newDate->getDay(),0);
+}
     
 
 TEST(BlackOutTime, newBlackOutTime){
