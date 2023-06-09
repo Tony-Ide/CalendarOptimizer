@@ -10,11 +10,10 @@ class MainMenu{
     public:
     MainMenu(Scheduler* schedule);
     void printTaskList(); 
-    void printWeek(Date* targetDate);
-    void printDay(Date* targetDate);
+    void printWeek();
+    void printDay();
 
     void printHelp();
-
     void printTaskTable();
     void  editTaskMenu();
     void  addTaskMenu();

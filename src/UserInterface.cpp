@@ -37,6 +37,7 @@ void UserInterface::checkInvalidValue(){
         if(userInput[0].compare(commands[i])){    
             commandExists = true;
         }
+        
     }
     if(commandExists == false){
         throw std::string("invalid command");

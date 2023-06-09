@@ -2,15 +2,6 @@
 #include "../src/UserInterface.cpp"
 
 #include "gtest/gtest.h"
-class Date{
-    public:
-    Date(int month, int day){
-        this->day = day;
-        this->Month = month;
-    }
-    int Month;
-    int day;
-};
 
 TEST(UserinputTest, TestUser) {
     UserInterface *UI = new UserInterface();
@@ -32,7 +23,7 @@ TEST(UserinputTest, TestCommandOrganize){
 }
 
 TEST(UserinputTest, TestWrongdate){
-    try{
+    try{a
         UserInterface *UI = new UserInterface("add task1 ab/cd 8 1");
     }
     catch(std::string err ){
