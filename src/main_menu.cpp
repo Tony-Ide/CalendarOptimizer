@@ -22,7 +22,14 @@ using namespace std;
 
         int number=1;
         for(todoIterater = newTodoList.begin(); todoIterater!= newTodoList.end(); todoIterater++){
-            printf("%2i. %13s  %2i/%2i      %4i       %2i         %i\n",number,(*todoIterater)->getName().c_str(),(*todoIterater)->getDate()->getMonth(),(*todoIterater)->getDate()->getDay(), (*todoIterater)->getTime(),(*todoIterater)->getDuration(), (*todoIterater)->getPriority());
+            printf("%2i. %13s  %2i/%2i      %4i       %2i         %i\n",
+            number,(*todoIterater)->getName().c_str(),
+            (*todoIterater)->getDate()->getMonth(),
+            (*todoIterater)->getDate()->getDay(),
+            (*todoIterater)->getTime(),
+            (*todoIterater)->getDuration(),
+            (*todoIterater)->getPriority()
+            );
             number++;
         }
         
@@ -102,8 +109,8 @@ using namespace std;
             for(todoIterater = newTodoList.begin(); todoIterater!= newTodoList.end(); todoIterater++){
                 for(int days=0;days<7;days++){
                     if((*todoIterater) ->getDate()->getMonth() == printdates[days][0] && (*todoIterater)->getDate()->getDay() == printdates[days][1]
-                        && (*todoIterater)->getTime() >= hour * 50 && (*todoIterater)->getTime() < hour*50 + 30 && typeid((*todoIterater)).name() != "BlackOutTime"){
-                            
+                        && (*todoIterater)->getTime() >= hour * 50 && (*todoIterater)->getTime() < hour*50 + 30 && strcmp((*todoIterater)->getName().c_str(),"Blackout") != 0){
+                        
                         for(int i=0;i<(*todoIterater)->getDuration()*2+1;i++){
                             if(hour+i > 50){
                                 break;
@@ -158,11 +165,14 @@ using namespace std;
         int lastLineNum=0;
         int printline=0;
         int todoExists=false;
+
         printf("          %2i/%2i\n",month,day);
+        printf("|---------------------|\n");
         for(int hour=6*2;hour<25*2;hour++){
             for(todoIterater = newTodoList.begin(); todoIterater!= newTodoList.end(); todoIterater++){
                 if((*todoIterater)->getDate()->getMonth() == month && (*todoIterater)->getDate()->getDay() == day
-                && (*todoIterater)->getTime() >= hour*50 && (*todoIterater)->getTime() < hour*50 + 30 && typeid((*todoIterater)).name() != "BlackOutTime"){
+                && (*todoIterater)->getTime() >= hour*50 && (*todoIterater)->getTime() < hour*50 + 30 
+                && strcmp((*todoIterater)->getName().c_str(),"Blackout") != 0){
                     printline = (*todoIterater)->getDuration()*2+1;
                     lastLineNum= hour+printline;
                     for(int line = 0;line<printline-1;line++){
@@ -187,7 +197,7 @@ using namespace std;
                     }
                     hour = lastLineNum-1;
                     todoExists = true;
-                } 
+                }
             }
             if(lastLineNum<50){
                 if(todoExists == false){
