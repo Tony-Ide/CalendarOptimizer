@@ -11,6 +11,7 @@ class UserInterface{
     std::vector<std::string> userInput;
     //Todo todo;
     std::vector<std::string> commands={"add","edit","remove","organize","help"};
+    std::vector<std::string> screens={"weekview","monthview","dayview"}
 
     public:
     void getLineFromUser();

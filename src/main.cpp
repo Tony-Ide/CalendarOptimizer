@@ -1,6 +1,7 @@
 #include <iostream>
 #include "../header/main_menu.hpp"
 #include "../header/scheduler.hpp"
+#include "../header/blackout_time.hpp"
 using namespace std;
 
 int main()
@@ -57,6 +58,5 @@ int main()
             cout << "Invalid Value! Returning to main menu..." << endl;
         }
     }
-
     return 0;
 }

@@ -14,7 +14,6 @@ class MainMenu{
     void printDay(Date* targetDate);
 
     void printHelp();
-
     void printTaskTable();
     void  editTaskMenu();
     void  addTaskMenu();
