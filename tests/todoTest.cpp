@@ -33,6 +33,20 @@ TEST(TaskTest, newTask){
 
 }
 
+
+TEST(DateTest, newDateNormal){
+    Date* newDate= new Date(1,20);
+    EXPECT_EQ(newDate->getMonth(),1);
+    EXPECT_EQ(newDate->getDay(),20);
+    
+}
+
+TEST(DateTest, defaultDate){
+    Date* newDate= new Date();
+    EXPECT_EQ(newDate->getMonth(),0);
+    EXPECT_EQ(newDate->getDay(),0);
+    
+
 TEST(BlackOutTime, newBlackOutTime){
     Date* newDate= new Date(1,20);
     BlackOutTime* e = new BlackOutTime(newDate, "Baseball Practice", 1, 1230, 30, 1);
@@ -42,6 +56,7 @@ TEST(BlackOutTime, newBlackOutTime){
     EXPECT_EQ(e->getPriority(),1);
     EXPECT_EQ(e->getTime(), 1230);
     EXPECT_EQ(e->getDuration(), 30);
+
 
 }
 
