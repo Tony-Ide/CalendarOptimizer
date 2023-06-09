@@ -10,7 +10,7 @@ class BlackOutTime : public Event{
         
     public:
 
-        BlackOutTime(Date* d, int t, int dur);
+        BlackOutTime(Date* d, string n, int p, int t, int dur);
 
 };
 

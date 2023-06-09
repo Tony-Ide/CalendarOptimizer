@@ -1,5 +1,9 @@
 #include "../header/event.hpp"
 
+Event::Event()
+{
+    priority = 0;
+}
 Event::Event(Date* d, string s, int p, int t, int dur)
 {
     date = d;

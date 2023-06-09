@@ -295,6 +295,8 @@ using namespace std;
             int day;
             int durationTime;
             int time;
+            string taskname = "Blackout";
+            int priority = 4;
             cout<< "Enter Date (e.g. 02 24 for February 24th): ";
             cin>>month;
             cin>>day;
@@ -303,7 +305,7 @@ using namespace std;
             cout<< "Enter start time (e.g. 1300 for 1:00pm): ";
             cin>>time;
             Date* newDate = new Date(month,day);
-            BlackOutTime* blackout = new BlackOutTime(newDate, time, durationTime);
+            BlackOutTime* blackout = new BlackOutTime(newDate, taskname, priority, time, durationTime);
         }
         else
         {
@@ -364,6 +366,8 @@ using namespace std;
                 }
             }
             scheduler->editTask(*it, newTask);
+            cout << endl;
+            cout << "Task edited successfully." << endl;
         }
 
         else if(todoType==2){
@@ -405,13 +409,13 @@ using namespace std;
                 }
             }
             scheduler->editTask(*it, newEvent);
+            cout << endl;
+            cout << "Task edited successfully." << endl;
         }
         else
         {
             cout << "Invalid Type! Aborting..." << endl;
         }
-        cout << endl;
-        cout << "Task edited successfully." << endl;
     }
 
     void MainMenu::deleteTaskMenu()
