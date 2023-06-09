@@ -2,11 +2,12 @@
 
 #include <string>
 
-BlackOutTime::BlackOutTime(Date* d, string n, int p, int t, int dur){
+BlackOutTime::BlackOutTime(Date* d, string n, int p, int t, int dur, int r){
     date = d;
     name = n;
     time.push_back(t);
     priority = p;
     duration = dur;
+    repeat = r;
 }
 

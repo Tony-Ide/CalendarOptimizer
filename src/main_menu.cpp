@@ -256,7 +256,7 @@ using namespace std;
             int priority;
             int time;
             int durationTime;
-            int recall;
+            int repeat;
             cout<< "Enter Date (e.g. 02 24 for February 24th): ";
             cin>>month;
             cin>>day;
@@ -266,10 +266,12 @@ using namespace std;
             cin>>priority;
             cout<< "Enter duration time in hours: ";
             cin>>durationTime;
+            cout << "How many days will this event repeat? (0 if it does not repeat): ";
+            cin >> repeat;
             cout<< "Enter start time (e.g. 1300 for 1:00pm): ";
             cin>>time;
             Date* newDate = new Date(month,day);
-            Event* newEvent = new Event(newDate, newTodoName, priority, time, durationTime);
+            Event* newEvent = new Event(newDate, newTodoName, priority, time, durationTime, repeat);
             char choice;
             cout << "Would you like to add an alternative start time? (y or n): ";
             cin >> choice;
@@ -297,6 +299,7 @@ using namespace std;
             int time;
             string taskname = "Blackout";
             int priority = 4;
+            int repeat = 365;
             cout<< "Enter Date (e.g. 02 24 for February 24th): ";
             cin>>month;
             cin>>day;
@@ -305,7 +308,8 @@ using namespace std;
             cout<< "Enter start time (e.g. 1300 for 1:00pm): ";
             cin>>time;
             Date* newDate = new Date(month,day);
-            BlackOutTime* blackout = new BlackOutTime(newDate, taskname, priority, time, durationTime);
+            BlackOutTime* blackout = new BlackOutTime(newDate, taskname, priority, time, durationTime, repeat);
+            scheduler->addTask(blackout);
         }
         else
         {
@@ -377,7 +381,7 @@ using namespace std;
             int priority;
             int time;
             int durationTime;
-            int recall;
+            int repeat;
             cout<< "Enter New Date (e.g. 02 24 for February 24th): ";
             cin>>month;
             cin>>day;
@@ -387,10 +391,12 @@ using namespace std;
             cin>>priority;
             cout<< "Enter new duration time in hours: ";
             cin>>durationTime;
+            cout << "How many days will this event repeat? (0 if it does not repeat): ";
+            cin >> repeat;
             cout<< "Enter new start time (e.g. 1300 for 1:00pm): ";
             cin>>time;
             Date* newDate = new Date(month,day);
-            Event* newEvent = new Event(newDate, newTodoName, priority, time, durationTime);
+            Event* newEvent = new Event(newDate, newTodoName, priority, time, durationTime, repeat);
             char choice;
             cout << "Would you like to add an alternative start time? (y or n): ";
             cin >> choice;
@@ -424,10 +430,17 @@ using namespace std;
         printTaskList();
         cout << "Which task would you like to delete? ";
         cin >> choice;
-        list<Todo*>::iterator it;
-        for(int i = 0; i < choice; i++)
+        while(cin.fail())
         {
-            it = scheduler->getTaskList().begin();
+            cout << "Please enter the task number." << endl;
+            cin.clear();
+            cin.ignore(10000,'\n');
+            cin >> choice;
+        }
+        list<Todo*>::iterator it;
+        it = scheduler->getTaskList().begin();
+        for(int i = 1; i < choice; i++)
+        {
             ++it;
         }
         scheduler->removeTask(*it);
