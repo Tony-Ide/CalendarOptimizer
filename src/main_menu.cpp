@@ -7,6 +7,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+#include <typeinfo>
 using namespace std;
 
 
@@ -24,6 +25,7 @@ using namespace std;
             printf("%2i. %13s  %2i/%2i      %4i       %2i         %i\n",number,(*todoIterater)->getName().c_str(),(*todoIterater)->getDate()->getMonth(),(*todoIterater)->getDate()->getDay(), (*todoIterater)->getTime(),(*todoIterater)->getDuration(), (*todoIterater)->getPriority());
             number++;
         }
+        
 
     }
 
@@ -58,12 +60,13 @@ using namespace std;
         }
     }
 
-    void MainMenu::printWeek(Date* targetDate){
-        /*vector<string> dateSplit = split(date,'/');
-        int month = stoi(dateSplit[0]);
-        int day = stoi(dateSplit[1]);*/
-        int month = targetDate->getMonth();
-        int day = targetDate->getMonth();
+    void MainMenu::printWeek(){
+        
+        printf("Enter Date (e.g. 02 24 for February 24th): ");
+        int month=0;
+        int day=0;
+        cin >> month >> day;
+
         int m[]= { 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
         vector<int> printdates[7];
         
@@ -99,7 +102,7 @@ using namespace std;
             for(todoIterater = newTodoList.begin(); todoIterater!= newTodoList.end(); todoIterater++){
                 for(int days=0;days<7;days++){
                     if((*todoIterater) ->getDate()->getMonth() == printdates[days][0] && (*todoIterater)->getDate()->getDay() == printdates[days][1]
-                        && (*todoIterater)->getTime() >= hour * 50 && (*todoIterater)->getTime() < hour*50 + 30){
+                        && (*todoIterater)->getTime() >= hour * 50 && (*todoIterater)->getTime() < hour*50 + 30 && typeid((*todoIterater)).name() != "BlackOutTime"){
                             
                         for(int i=0;i<(*todoIterater)->getDuration()*2+1;i++){
                             if(hour+i > 50){
@@ -139,9 +142,15 @@ using namespace std;
         
     }
 
-    void MainMenu::printDay(Date* targetDate){
-        int month = targetDate->getMonth();
+    void MainMenu::printDay(){
+        /*int month = targetDate->getMonth();
         int day = targetDate->getMonth();
+        */
+        printf("Enter Date (e.g. 02 24 for February 24th): ");
+        int month=0;
+        int day=0;
+        cin >> month >> day;
+
         list<Todo*> newTodoList = scheduler->getTaskList();
         list<Todo*>::iterator todoIterater;
 
@@ -153,7 +162,7 @@ using namespace std;
         for(int hour=6*2;hour<25*2;hour++){
             for(todoIterater = newTodoList.begin(); todoIterater!= newTodoList.end(); todoIterater++){
                 if((*todoIterater)->getDate()->getMonth() == month && (*todoIterater)->getDate()->getDay() == day
-                && (*todoIterater)->getTime() >= hour*50 && (*todoIterater)->getTime() < hour*50 + 30){
+                && (*todoIterater)->getTime() >= hour*50 && (*todoIterater)->getTime() < hour*50 + 30 && typeid((*todoIterater)).name() != "BlackOutTime"){
                     printline = (*todoIterater)->getDuration()*2+1;
                     lastLineNum= hour+printline;
                     for(int line = 0;line<printline-1;line++){
@@ -207,6 +216,7 @@ using namespace std;
 
         int todoType;
         cout<<"Select option:"<<"\n"<<"1: Task (can be completed in multiple sessions)"<<"\n"<<"2: Event (must be completed in one sitting)"<<"\n"<<"3: Blackout (times you don't want any tasks scheduled)"<<"\n"<<endl;
+        cout << "> ";
         cin>>todoType;
 
         if(todoType==1){
