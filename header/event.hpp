@@ -3,13 +3,13 @@
 #include "todo.hpp"
 
 class Event: public Todo{
-    private:
-        
+    protected:
+        int repeat;
 
 
     public:
     Event();
-    Event(Date* d, string s, int p, int t, int dur);
+    Event(Date* d, string s, int p, int t, int dur, int r);
 
 
 };
