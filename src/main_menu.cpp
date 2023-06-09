@@ -15,6 +15,10 @@ using namespace std;
         scheduler=schedule;
    
     }
+    MainMenu::~MainMenu()
+    {
+        delete scheduler;
+    }
     void MainMenu::printTaskList() {
         list<Todo*> newTodoList = scheduler->getTaskList();
         list<Todo*>::iterator todoIterater; 
@@ -54,15 +58,19 @@ using namespace std;
 
             if(command == "Add --help"){
                 //implement how to use Add
+                cout<<"Select 1 to navigate into Manage Task Screen, from there, select 1 to begin adding tasks";
             }
             else if(command == "Delete --help"){
                 //implement how to use Delete
+                cout<<"Select 1 to navigate into Manage Task Screen, from there, select 2 to begin deleting tasks";
             }
             else if(command == "Edit --help"){
                 //implement how to use Edit
+                cout<<"Select 1 to navigate into Manage Task Screen, from there, select 3 to begin editing tasks";
             }
             else if(command == "Organize --help"){
                 //implement how to use Organize
+                cout<<"Select 1 to navigate into Manage Task Screen, from there, select 4 to begin organizing tasks";
             }
         }
     }
@@ -344,9 +352,9 @@ using namespace std;
         cout << "Which task would you like to edit? ";
         cin >> choice;
         list<Todo*>::iterator it;
-        for(int i = 0; i < choice; i++)
+        it = scheduler->getTaskList().begin();
+        for(int i = 1; i < choice; i++)
         {
-            it = scheduler->getTaskList().begin();
             ++it;
         }
         int todoType;

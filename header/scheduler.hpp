@@ -9,6 +9,8 @@ class Scheduler{
     private:
         list<Todo*> TaskList;
     public:
+        Scheduler();
+        ~Scheduler();
         void addTask(Todo *task);
         void removeTask(Todo *task);
         void editTask(Todo *originalTask, Todo *editedTask);

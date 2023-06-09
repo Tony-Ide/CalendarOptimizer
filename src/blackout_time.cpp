@@ -11,3 +11,8 @@ BlackOutTime::BlackOutTime(Date* d, string n, int p, int t, int dur, int r){
     repeat = r;
 }
 
+BlackOutTime::~BlackOutTime()
+{
+    delete date;
+}
+

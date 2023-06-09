@@ -9,6 +9,7 @@ class Event: public Todo{
     public:
     Event();
     Event(Date* d, string s, int p, int t, int dur, int r);
+    ~Event();
 };
 
 #endif // EVENT_HPP
