@@ -62,15 +62,15 @@ MainMenu class is a class for printing the screens to use a scheduler. MainMenu 
 
 **Event**
 
-Event class is a class inherit Todo class to implement resulsive Todo. It uses for implmenting the todo that do every week.
+Event class is a class inherit Todo class to implement resulsive Todo. It uses for implmenting the todo that do everyday.
 
 **BlackOutTIme**
 
-BlackOutTIme class is a class inherit Event class. it implement time that do not want to work on. It has name varialbe with "Blackout" to implemt it is BlackOutTime.
+BlackOutTIme class is a class inherit Event class. it implement time that do not want to work on. if BlackoutTime exists on certain time, any other todo or tasks cannot be there. 
 
 **Task**
 
-Task class is a class inherit Todo class. It implements 
+Task class is a class inherit Todo class. It implements Todo that can be done in multiple sittings.
  
  ## Screenshots
  > Screenshots of the input/output after running your application
