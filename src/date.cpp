@@ -10,6 +10,11 @@ Date::Date(int m, int d){
     day=d;
 }
 
+Date::~Date()
+{
+    
+}
+
 int Date::getMonth(){
     return month;
 }

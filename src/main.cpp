@@ -22,8 +22,9 @@ int main()
         {
             cout << "1. Add" << endl;
             cout << "2. Delete" << endl;
-            cout << "3. Optimize" << endl;
-            cout << "4. Back" << endl;
+            cout << "3. Edit" << endl;
+            cout << "4. Organize" << endl;
+            cout << "5. Back " << endl;
             cout << "> ";
             cin >> choice;
             if(choice == 1)
@@ -77,5 +78,6 @@ int main()
             cout << "Invalid Value! Returning to main menu..." << endl;
         }
     }
+    delete m;
     return 0;
 }
