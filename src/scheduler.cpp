@@ -7,6 +7,22 @@
 
 using namespace std;
 
+Scheduler::Scheduler()
+{
+
+}
+
+Scheduler::~Scheduler()
+{
+    list<Todo*>::iterator it;
+    for(it = TaskList.begin(); it != TaskList.end(); ++it)
+    {
+        delete (*it)->getDate();
+        delete (*it);
+    }
+    TaskList.clear();
+}
+
 void Scheduler::addTask(Todo *task)
 {
     list<Todo*>::iterator it;
@@ -66,12 +82,13 @@ void Scheduler::removeTask(Todo *task)
         }
     }
     TaskList.erase(it);
+    delete task->getDate();
+    delete task;
 }
 
 void Scheduler::editTask(Todo *originalTask, Todo *editedTask)
 {
     removeTask(originalTask);
-    delete originalTask;
     addTask(editedTask);
 }
 

@@ -8,6 +8,7 @@ class Task: public Todo{
 
     public:
     Task(Date* d, string s, int p, int t, int dur);
+    ~Task();
     void splitTask(Task* newTask);
 };
 

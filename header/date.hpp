@@ -12,6 +12,7 @@ class Date{
     public:
     Date();
     Date(int, int);
+    ~Date();
 
     int getMonth();
     int getDay();

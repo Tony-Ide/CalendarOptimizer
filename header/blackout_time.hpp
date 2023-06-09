@@ -11,6 +11,7 @@ class BlackOutTime : public Event{
     public:
 
         BlackOutTime(Date* d, string n, int p, int t, int dur, int r);
+        ~BlackOutTime();
 
 };
 

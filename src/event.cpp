@@ -13,3 +13,7 @@ Event::Event(Date* d, string s, int p, int t, int dur, int r)
     duration = dur;
     repeat = r;
 }
+Event::~Event()
+{
+    delete date;
+}
