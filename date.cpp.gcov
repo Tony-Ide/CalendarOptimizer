@@ -1,0 +1,30 @@
+        -:    0:Source:src/date.cpp
+        -:    0:Graph:date.gcno
+        -:    0:Data:-
+        -:    0:Runs:0
+        -:    0:Programs:0
+        -:    1:#include "../header/date.hpp"
+        -:    2:using namespace std;
+        -:    3:
+    #####:    4:Date::Date(){
+    #####:    5:    month=0;
+    #####:    6:    day=0;
+    #####:    7:}
+    #####:    8:Date::Date(int m, int d){
+    #####:    9:    month=m;
+    #####:   10:    day=d;
+    #####:   11:}
+        -:   12:
+    #####:   13:Date::~Date()
+        -:   14:{
+        -:   15:    
+    #####:   16:}
+        -:   17:
+    #####:   18:int Date::getMonth(){
+    #####:   19:    return month;
+        -:   20:}
+        -:   21:    
+        -:   22:    
+    #####:   23:int Date::getDay(){
+    #####:   24:    return day;
+        -:   25:}

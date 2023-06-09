@@ -20,7 +20,9 @@ ADD_EXECUTABLE(todoTests
     src/blackout_time.cpp
 )
 
-
+# Enable code coverage with gcov
+SET(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --coverage")
+SET(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} --coverage")
 
 
 TARGET_LINK_LIBRARIES(todoTests gtest)
