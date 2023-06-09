@@ -33,6 +33,19 @@ TEST(TaskTest, newTask){
 
 }
 
+TEST(DateTest, newDateNormal){
+    Date* newDate= new Date(1,20);
+    EXPECT_EQ(newDate->getMonth(),1);
+    EXPECT_EQ(newDate->getDay(),20);
+    
+}
+
+TEST(DateTest, defaultDate){
+    Date* newDate= new Date();
+    EXPECT_EQ(newDate->getMonth(),0);
+    EXPECT_EQ(newDate->getDay(),0);
+    
+}
 
 
 int main(int argc, char** argv) {
