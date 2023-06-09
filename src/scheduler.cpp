@@ -70,9 +70,9 @@ void Scheduler::removeTask(Todo *task)
 
 void Scheduler::editTask(Todo *originalTask, Todo *editedTask)
 {
-    TaskList.erase(originalTask);
+    removeTask(originalTask);
     delete originalTask;
-    TaskList.push_back(editedTask);
+    addTask(editedTask);
 }
 
 void Scheduler::optimize()

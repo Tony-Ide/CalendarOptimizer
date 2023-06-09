@@ -1,6 +1,6 @@
-#include "todo.hpp"
 #ifndef EVENT_HPP
 #define EVENT_HPP
+#include "todo.hpp"
 
 class Event: public Todo{
     private:
@@ -8,6 +8,7 @@ class Event: public Todo{
 
 
     public:
+    Event();
     Event(Date* d, string s, int p, int t, int dur);
 
 
